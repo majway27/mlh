@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">MLH</string>
+    <string name="app_name">Mothers Little Helper</string>
+    <string name="button_request">Test Post</string>
+    <string name="button_schedule">Schedule</string>
+    <string name="button_check_queue">View Pending</string>
+    <string name="text_request">Post Appointment - Test</string>
+    <string name="text_schedule">Schedule an Appointment</string>
+    <string name="text_check_queue">View Pending Appointment Requests</string>
 </resources>
