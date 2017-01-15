@@ -6,4 +6,6 @@
     <string name="text_request">Post Appointment - Test</string>
     <string name="text_schedule">Schedule an Appointment</string>
     <string name="text_check_queue">View Pending Appointment Requests</string>
+    <string name="send_request">Test Send</string>
+    <string name="button_send_request">Test Post</string>
 </resources>
