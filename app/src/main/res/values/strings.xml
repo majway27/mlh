@@ -6,13 +6,19 @@
     <string name="text_request">Post Appointment - Test</string>
     <string name="text_schedule">Schedule an Appointment</string>
     <string name="text_check_queue">View Pending Appointment Requests</string>
-    <string name="send_request">Test Send</string>
-    <string name="button_send_request">Test Post</string>
+    <string name="setup_request">Create New Appointment</string>
+    <string name="button_send_request">Go!</string>
 
+    <string name="service_id_prompt">Choose a Time</string>
+    <string name="e_id_prompt">Choose a Child Type</string>
     <string-array name="service_id_array">
-        <item>30</item>
-        <item>60</item>
-        <item>90</item>
+        <item>30 Minutes</item>
+        <item>1 Hour</item>
+        <item>1 Hour 30 Minutes</item>
+    </string-array>
+    <string-array name="e_id_array">
+        <item>Child</item>
+        <item>Infant</item>
     </string-array>
 
 </resources>

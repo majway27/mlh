@@ -10,6 +10,7 @@ Mother's Little Helper 2, Android App
   * ~~Basic static values~~
   * ~~AsyncTask for call~~
   * Simple GUI Values for post
+  * Validate mechanize form management
 * Save pending request, scheduler picks up and posts
   * Alarmmanager, Jobscheduler eval
   * Scheduler understands 2 day wait and monitors and schedules valid targets from list
@@ -22,8 +23,8 @@ Mother's Little Helper 2, Android App
 * Apt request
   * Methods
     * Svc login via stored creds
-    * Pick Time Frame
-    * Pick Kid Type
+    * Pick Time Frame (973 - 30 minutes, 974 - 1  hour, 975 - 1 hour 30 minutes
+    * Pick Kid Type (782 - Child, 783 - Infant)
     * Action - viewappts
     * Action - confirm
     * Action - confirm, finalize_appt
