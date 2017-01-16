@@ -8,4 +8,11 @@
     <string name="text_check_queue">View Pending Appointment Requests</string>
     <string name="send_request">Test Send</string>
     <string name="button_send_request">Test Post</string>
+
+    <string-array name="service_id_array">
+        <item>30</item>
+        <item>60</item>
+        <item>90</item>
+    </string-array>
+
 </resources>

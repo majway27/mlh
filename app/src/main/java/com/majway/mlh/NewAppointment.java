@@ -59,6 +59,26 @@ public class NewAppointment extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
+    protected String TestCallAppointmentService(String testparam1, String testparam2) {
+        MechanizeAgent agent = new MechanizeAgent();
+        Parameters parameters = new Parameters().add("param1", testparam1).add("param2", testparam2);
+        HtmlDocument page = agent.post("http://posttestserver.com/post.php", parameters);
+        String pageString = page.htmlElements().toString();
+        System.out.println(pageString);
+        return pageString;
+        //resp = "test";
+    }
+
+    protected String CallAppointmentService(String testparam1, String testparam2) {
+        MechanizeAgent agent = new MechanizeAgent();
+        Parameters parameters = new Parameters().add("param1", testparam1).add("param2", testparam2);
+        HtmlDocument page = agent.post("http://posttestserver.com/post.php", parameters);
+        String pageString = page.htmlElements().toString();
+        System.out.println(pageString);
+        return pageString;
+        //resp = "test";
+    }
+
     private class AsyncTaskRunner extends AsyncTask<String, String, String> {
 
         private String resp;
@@ -68,17 +88,17 @@ public class NewAppointment extends AppCompatActivity {
         protected String doInBackground(String... params) {
             onProgressUpdate("Scheduling Appointment.."); // Calls onProgressUpdate()
             try {
-                MechanizeAgent agent = new MechanizeAgent();
-                Parameters parameters = new Parameters().add("param1", "value").add("param2", "value2");
-                HtmlDocument page = agent.post("http://posttestserver.com/post.php", parameters);
-                String pageString = page.htmlElements().toString();
-                if (!(pageString.contains(" Successfully dumped 2 post variables"))) {
+                /*resp = CallAppointmentService("Bob", "Uncle");
+                if (!(resp.contains(" Successfully dumped 2 post variables"))) {
                     throw new Exception("Appointment Request Call Failed!");
                 }
-                System.out.println(pageString);
-                resp = pageString;
-                //resp = "test";
-                return  resp;
+                return resp;*/
+                resp = TestCallAppointmentService("Bob", "Uncle");
+                if (!(resp.contains(" Successfully dumped 2 post variables"))) {
+                    throw new Exception("Appointment Request Call Failed!");
+                }
+                return resp;
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
                 resp = e.getMessage();

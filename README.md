@@ -6,18 +6,53 @@ Mother's Little Helper 2, Android App
   * ~~Schedule request now~~
   * ~~Schedule pending request~~
   * ~~View pending requests~~
-* Simple post with known static values to create apt
-  * AsyncTask for call
+* Simple post
+  * ~~Basic static values~~
+  * ~~AsyncTask for call~~
+  * Simple GUI Values for post
 * Save pending request, scheduler picks up and posts
-* Scheduler understands 2 day wait and monitors and schedules valid targets from list
-* Store Credentials safely
-* Fancy GUI
-* Assets pickable from pick list
-* MPL ?
+  * Alarmmanager, Jobscheduler eval
+  * Scheduler understands 2 day wait and monitors and schedules valid targets from list
+* End user one-time setup, shared prefs ?
+  * User friendly name
+  * instance
+  * stored creds
+  * customer_id
+  * location_id
+* Apt request
+  * Methods
+    * Svc login via stored creds
+    * Pick Time Frame
+    * Pick Kid Type
+    * Action - viewappts
+    * Action - confirm
+    * Action - confirm, finalize_appt
+  * Use GUI values
+    * first_appt_time, last_appt_time
+    * service_id  // Time Frame
+    * e_id // Kid type
+    * child1, child2, etc
+    * selected_children, child_count // Pipe delinated
+    * children_list // Comma delinated
+    * Scheduling Related // appt_start_time:
+      appt_end_time:
+      date_ymd:
+      starting_date:
+      next_date:
+      prev_date:
+      next_date1:
+      prev_date1
+  * Use setup values
+  * Use stored creds
 
 ## Considering
 * Push notifications when activity happens?
 * Direct link to site for manual verification?
+* MPL ?
+* Fancy GUI, Pretty Icons ?
+  * "New Apt" should be google style plus button in lower right.
+  * View Scheduled should be a TextView panel in main page
+  * Should say welcome/hello user on main page
 
 ## Notes
 * Requires API 21, min version 5
