@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     /** Called when the user clicks the Send button */
     public void requestAppointment(View view) {
-        Intent intent = new Intent(this, NewAppointment.class);
+        Intent intent = new Intent(this, AppointmentBroker.class);
         startActivity(intent);
     }
 

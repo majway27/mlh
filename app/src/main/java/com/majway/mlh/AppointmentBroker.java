@@ -12,7 +12,7 @@ import android.widget.Toast;
 import android.app.ProgressDialog;
 
 
-public class NewAppointment extends AppCompatActivity {
+public class AppointmentBroker extends AppCompatActivity {
 
     private TextView returnStatus;
     private Spinner svc_id_spinner, e_id_spinner;
@@ -20,7 +20,7 @@ public class NewAppointment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_appointment);
+        setContentView(R.layout.activity_appointment_broker);
 
         Intent intent = getIntent();
         // Setup output window
@@ -39,6 +39,10 @@ public class NewAppointment extends AppCompatActivity {
             AsyncTaskRunner runner = new AsyncTaskRunner();
             // Run Mechanize call with string args
             runner.execute(
+                    /** Little trick to do a pretend key/value array via xml approach to spinner contents.
+                       For consistency, apt times will be a long list and I didn't want to clutter up class file with
+                       that long list.
+                     **/
                     getResources().getStringArray(R.array.service_id_array_values)[svc_id_spinner.getSelectedItemPosition()],
                     getResources().getStringArray(R.array.e_id_array_values)[e_id_spinner.getSelectedItemPosition()]
             );
@@ -66,17 +70,22 @@ public class NewAppointment extends AppCompatActivity {
             onProgressUpdate("Scheduling Appointment.."); // Calls onProgressUpdate()
             AppointmentService aptsvc = new AppointmentService();
 
+            // Wrap risky network calls in T/C
             try {
-                /*resp = com.majway.mlh.CallAppointmentService("Bob", "Uncle");
-                if (!(resp.contains(" Successfully dumped 2 post variables"))) {
-                    throw new Exception("Appointment Request Call Failed!");
+                resp = aptsvc.LoginAppointmentService();
+                if (resp.contains(" We could not find your login information.")) {
+                    throw new Exception("Login Failed!");
                 }
-                return resp;*/
-
+                resp = aptsvc.LogoutAppointmentService();
+                if (!(resp.contains("Jack18"))) {
+                    throw new Exception("Logout Failed!");
+                }
+                /* Debug testing
                 resp = aptsvc.TestCallAppointmentService(params[0], params[1]);
                 if (!(resp.contains(" Successfully dumped 2 post variables"))) {
                     throw new Exception("Appointment Request Call Failed!");
-                }
+                } */
+                resp = "Testing";
                 return resp;
 
             } catch (InterruptedException e) {
@@ -98,7 +107,7 @@ public class NewAppointment extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            progressDialog = ProgressDialog.show(NewAppointment.this,
+            progressDialog = ProgressDialog.show(AppointmentBroker.this,
                     "ProgressDialog",
                     "Status: Starting Call");
         }

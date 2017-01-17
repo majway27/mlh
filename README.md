@@ -11,7 +11,8 @@ Mother's Little Helper 2, Android App
   * ~~AsyncTask for call~~
   * ~~Simple GUI Values for post~~
   * ~~Spinner array key/value for gui values post~~
-  * Validate mechanize form management
+  * Simple user-pass store (sharedprefs)
+  * ~~Validate mechanize form management (do login, screendump, logout)~~
 * Save pending request, scheduler picks up and posts
   * Alarmmanager, Jobscheduler eval
   * Scheduler understands 2 day wait and monitors and schedules valid targets from list
@@ -45,8 +46,10 @@ Mother's Little Helper 2, Android App
       next_date1:
       prev_date1
   * Use setup values
+  * Migrate to smartlock for creds
   * Use stored creds
   * Cleanup GUI stuff in xml
+  * Logout button on app to clear user settings
 
 ## Considering
 * Push notifications when activity happens?
