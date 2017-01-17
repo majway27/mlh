@@ -9,7 +9,8 @@ Mother's Little Helper 2, Android App
 * Simple post
   * ~~Basic static values~~
   * ~~AsyncTask for call~~
-  * Simple GUI Values for post
+  * ~~Simple GUI Values for post~~
+  * Spinner array key/value for gui values post
   * Validate mechanize form management
 * Save pending request, scheduler picks up and posts
   * Alarmmanager, Jobscheduler eval
@@ -45,6 +46,7 @@ Mother's Little Helper 2, Android App
       prev_date1
   * Use setup values
   * Use stored creds
+  * Cleanup GUI stuff in xml
 
 ## Considering
 * Push notifications when activity happens?

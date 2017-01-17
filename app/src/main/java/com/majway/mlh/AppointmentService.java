@@ -30,4 +30,50 @@ public class AppointmentService {
         //resp = "test";
     }
 
+    protected void LoginAppointmentService() {
+        MechanizeAgent agent = new MechanizeAgent();
+
+    }
+
+    protected void LogoutAppointmentService() {
+        MechanizeAgent agent = new MechanizeAgent();
+
+    }
+
+    /** Pick Time Frame.  See apt-plus-timescale.csv in project root. **/
+    protected void SvcIDAppointmentService() {
+        MechanizeAgent agent = new MechanizeAgent();
+
+    }
+
+    /** Pick kid type. **/
+    protected void EIDAppointmentService() {
+        MechanizeAgent agent = new MechanizeAgent();
+
+    }
+
+    /** Set other key data mimicing "javascript:doSubmit() that validates and posts".  Mechanize doesn't support Javascript.  Set Other hidden data on form.
+        Use Mechanize#post, for some reason submitting the report_form object(like above) doesn't work. Notably uri picks up a trailing action value and the action field on the form isn't set..
+        This selects an available day to set a reservation.
+        Returns day's available slots for reservation.  **/
+    protected void ViewAptsAppointmentService() {
+        MechanizeAgent agent = new MechanizeAgent();
+
+    }
+
+    /** Choose/submit time slot on day's calendar
+       Checks a time slots availability, and if availabile soft-reserves it.
+       Returns confirmation to be finalized below. **/
+    protected void ConfirmAppointmentService() {
+        MechanizeAgent agent = new MechanizeAgent();
+
+    }
+
+    /** Finalizes a selected reservation.
+        Returns success message if reservation was successful. **/
+    protected void FinalizeAppointmentService() {
+        MechanizeAgent agent = new MechanizeAgent();
+
+    }
+
 }

@@ -17,14 +17,14 @@
         android:padding="16dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/svc_id_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:entries="@array/service_id_array"
         android:prompt="@string/service_id_prompt" />
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/e_id_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"

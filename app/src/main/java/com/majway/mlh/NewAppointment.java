@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
@@ -14,6 +15,7 @@ import android.app.ProgressDialog;
 public class NewAppointment extends AppCompatActivity {
 
     private TextView returnStatus;
+    private Spinner svc_id_spinner, e_id_spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +23,26 @@ public class NewAppointment extends AppCompatActivity {
         setContentView(R.layout.activity_new_appointment);
 
         Intent intent = getIntent();
+        // Setup output window
         returnStatus=(TextView)findViewById(R.id.textView1);
         returnStatus.setText("Get Ready!");
+        // Setup spinners
+        svc_id_spinner = (Spinner) findViewById(R.id.svc_id_spinner);
+        e_id_spinner = (Spinner) findViewById(R.id.e_id_spinner);
     }
 
     public void onBtnClicked(View v)
     {
         if(v.getId() == R.id.btnSendAppointmentRequest)
         {
+            String svc_id_spinner_value = String.valueOf(svc_id_spinner.getSelectedItem());
+            String e_id_spinner_value = String.valueOf(e_id_spinner.getSelectedItem());
+            // Debug
+            MessageBox(svc_id_spinner_value);
+            MessageBox(e_id_spinner_value);
             AsyncTaskRunner runner = new AsyncTaskRunner();
-            runner.execute();
+            // Run Mechanize call with string args
+            runner.execute(svc_id_spinner_value,e_id_spinner_value);
             MessageBox("Request Sent");
         }
     }
@@ -57,7 +69,7 @@ public class NewAppointment extends AppCompatActivity {
                 }
                 return resp;*/
 
-                resp = aptsvc.TestCallAppointmentService("Bob", "Uncle");
+                resp = aptsvc.TestCallAppointmentService(params[0], params[1]);
                 if (!(resp.contains(" Successfully dumped 2 post variables"))) {
                     throw new Exception("Appointment Request Call Failed!");
                 }

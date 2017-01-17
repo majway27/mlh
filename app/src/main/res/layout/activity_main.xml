@@ -13,30 +13,36 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/text_request"
+        android:padding="16dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_request"
+        android:padding="16dp"
         android:onClick="requestAppointment" />
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/text_schedule"
+        android:padding="16dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_schedule"
+        android:padding="16dp"
         android:onClick="scheduleAppointment" />
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="@string/text_check_queue"
+        android:padding="16dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_check_queue"
+        android:padding="16dp"
         android:onClick="checkQueue" />
 </LinearLayout>
