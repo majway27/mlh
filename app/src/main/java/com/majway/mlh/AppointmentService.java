@@ -10,9 +10,11 @@ import com.gistlabs.mechanize.interfaces.document.Document;
 
 public class AppointmentService {
 
-    protected String TestCallAppointmentService(String testparam1, String testparam2) {
+    protected String TestCallAppointmentService(String... params) {
         MechanizeAgent agent = new MechanizeAgent();
-        Parameters parameters = new Parameters().add("param1", testparam1).add("param2", testparam2);
+        Parameters parameters = new Parameters()
+                .add("service_id",  params[0])
+                .add("e_id", params[1]);
         HtmlDocument page = agent.post("http://posttestserver.com/post.php", parameters);
         String pageString = page.htmlElements().toString();
         System.out.println(pageString);
@@ -20,9 +22,11 @@ public class AppointmentService {
         //resp = "test";
     }
 
-    protected String CallAppointmentService(String testparam1, String testparam2) {
+    protected String CallAppointmentService(String... params) {
         MechanizeAgent agent = new MechanizeAgent();
-        Parameters parameters = new Parameters().add("param1", testparam1).add("param2", testparam2);
+        Parameters parameters = new Parameters()
+                .add("service_id", params[0])
+                .add("e_id", params[1]);
         HtmlDocument page = agent.post("http://posttestserver.com/post.php", parameters);
         String pageString = page.htmlElements().toString();
         System.out.println(pageString);
