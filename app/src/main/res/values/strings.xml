@@ -10,15 +10,25 @@
     <string name="button_send_request">Go!</string>
 
     <string name="service_id_prompt">Choose a Time</string>
-    <string name="e_id_prompt">Choose a Child Type</string>
-    <string-array name="service_id_array">
+    <string-array name="service_id_array_keys">
         <item>30 Minutes</item>
         <item>1 Hour</item>
         <item>1 Hour 30 Minutes</item>
     </string-array>
-    <string-array name="e_id_array">
+    <string-array name="service_id_array_values">
+        <item>973</item>
+        <item>974</item>
+        <item>975</item>
+    </string-array>
+
+    <string name="e_id_prompt">Choose a Child Type</string>
+    <string-array name="e_id_array_keys">
         <item>Child</item>
         <item>Infant</item>
+    </string-array>
+    <string-array name="e_id_array_values">
+        <item>782</item>
+        <item>783</item>
     </string-array>
 
 </resources>

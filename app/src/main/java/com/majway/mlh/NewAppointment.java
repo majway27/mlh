@@ -35,15 +35,19 @@ public class NewAppointment extends AppCompatActivity {
     {
         if(v.getId() == R.id.btnSendAppointmentRequest)
         {
-            String svc_id_spinner_value = String.valueOf(svc_id_spinner.getSelectedItem());
-            String e_id_spinner_value = String.valueOf(e_id_spinner.getSelectedItem());
-            // Debug
-            MessageBox(svc_id_spinner_value);
-            MessageBox(e_id_spinner_value);
+            // Instantiate new async task/thread, can not run on main/ui thread.
             AsyncTaskRunner runner = new AsyncTaskRunner();
             // Run Mechanize call with string args
-            runner.execute(svc_id_spinner_value,e_id_spinner_value);
-            MessageBox("Request Sent");
+            runner.execute(
+                    getResources().getStringArray(R.array.service_id_array_values)[svc_id_spinner.getSelectedItemPosition()],
+                    getResources().getStringArray(R.array.e_id_array_values)[e_id_spinner.getSelectedItemPosition()]
+            );
+            MessageBox("Values: " +
+                    getResources().getStringArray(R.array.service_id_array_values)[svc_id_spinner.getSelectedItemPosition()]
+                    + " " +
+                    getResources().getStringArray(R.array.e_id_array_values)[e_id_spinner.getSelectedItemPosition()]
+                    + ". Request Sent"
+            );
         }
     }
 

@@ -10,7 +10,7 @@ Mother's Little Helper 2, Android App
   * ~~Basic static values~~
   * ~~AsyncTask for call~~
   * ~~Simple GUI Values for post~~
-  * Spinner array key/value for gui values post
+  * ~~Spinner array key/value for gui values post~~
   * Validate mechanize form management
 * Save pending request, scheduler picks up and posts
   * Alarmmanager, Jobscheduler eval
