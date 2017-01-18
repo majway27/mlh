@@ -38,7 +38,7 @@
         android:padding="16dp"
         android:onClick="onBtnClicked" />
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/resultView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>

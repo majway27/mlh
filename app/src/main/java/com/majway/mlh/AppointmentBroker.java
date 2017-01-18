@@ -24,7 +24,7 @@ public class AppointmentBroker extends AppCompatActivity {
 
         Intent intent = getIntent();
         // Setup output window
-        returnStatus=(TextView)findViewById(R.id.textView1);
+        returnStatus=(TextView)findViewById(R.id.resultView1);
         returnStatus.setText("Get Ready!");
         // Setup spinners
         svc_id_spinner = (Spinner) findViewById(R.id.svc_id_spinner);
