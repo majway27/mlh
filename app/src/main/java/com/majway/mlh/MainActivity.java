@@ -30,4 +30,10 @@ public class MainActivity extends AppCompatActivity {
         // Do something in response to button
     }
 
+    /** Called when the user clicks the Send button */
+    public void manageSettings(View view) {
+        Intent intent = new Intent(this, SettingsManager.class);
+        startActivity(intent);
+    }
+
 }

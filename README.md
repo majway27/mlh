@@ -11,17 +11,19 @@ Mother's Little Helper 2, Android App
   * ~~AsyncTask for call~~
   * ~~Simple GUI Values for post~~
   * ~~Spinner array key/value for gui values post~~
-  * Simple user-pass store (sharedprefs)
   * ~~Validate mechanize form management (do login, screendump, logout)~~
+* Private Preference Store
+  * Activity to manage "settings" -> View, -> Edit
+  * Two files, instance and child
+  * Creds
+  * User friendly name
+  * Instance
+  * Stored creds
+  * Customer_id
+  * Location_id
 * Save pending request, scheduler picks up and posts
   * Alarmmanager, Jobscheduler eval
   * Scheduler understands 2 day wait and monitors and schedules valid targets from list
-* End user one-time setup, shared prefs ?
-  * User friendly name
-  * instance
-  * stored creds
-  * customer_id
-  * location_id
 * Apt request
   * Methods
     * Svc login via stored creds
@@ -52,6 +54,7 @@ Mother's Little Helper 2, Android App
   * Logout button on app to clear user settings
 
 ## Considering
+* Enhance child data store to support scheduling child/infant in same "session", app logic drives separate appointment set posts ?
 * Push notifications when activity happens?
 * Direct link to site for manual verification?
 * MPL ?
