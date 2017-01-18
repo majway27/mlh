@@ -64,6 +64,7 @@ Mother's Little Helper 2, Android App
 * Requires API 21, min version 5
 * Android Studio
 * System.out.println will write to "Android Monitor" on verbose.
+* https://developer.android.com/studio/publish/app-signing.html, see debug.keystore in root
 
 ## Mechanize
 * http://stackoverflow.com/questions/16608135/android-studio-add-jar-as-library
