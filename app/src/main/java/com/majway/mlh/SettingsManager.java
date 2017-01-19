@@ -15,12 +15,12 @@ public class SettingsManager extends AppCompatActivity {
     private TextView settingsList;
     EditText ed1,ed2,ed3;
     Button b1, b2;
-    public static final String mlhInstancePreferences = "mlhInstancePreferencesFile" ;
-    public static final String FriendlyName = "friendlyNameKey";
-    public static final String UserName = "userNameKey";
-    public static final String Password= "passwordKey";
+    //public static final String mlhInstancePreferences = "mlhInstancePreferencesFile" ;
+    //public static final String FriendlyName = "friendlyNameKey";
+    //public static final String UserName = "userNameKey";
+    //public static final String Password= "passwordKey";
 
-    SharedPreferences sharedpreferences;
+    //SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,35 +29,24 @@ public class SettingsManager extends AppCompatActivity {
         settingsList=(TextView)findViewById(R.id.settingsView1);
         b1=(Button)findViewById(R.id.btnEditSettings);
         b2=(Button)findViewById(R.id.btnClearSettings);
-        sharedpreferences = getSharedPreferences(mlhInstancePreferences, Context.MODE_PRIVATE);
-        // Init TextView
-        settingsList.setText("Here are stored values: " + "\n");
-        settingsList.append("Your Name: " +  sharedpreferences.getString("friendlyNameKey", "Please set new value")+ "\n");
-        settingsList.append("Login User Name: " +  sharedpreferences.getString("userNameKey", "Please set new value")+ "\n");
-        settingsList.append("Password: " +  sharedpreferences.getString("passwordKey", "Please set new value"));
-        // Init Fields
-        ed1=(EditText)findViewById(R.id.editText1);
-        ed1.setText(sharedpreferences.getString("friendlyNameKey", "Your Preferred Name"));
-        ed2=(EditText)findViewById(R.id.editText2);
-        ed2.setText(sharedpreferences.getString("userNameKey", "Login User Name for Appointment Service"));
-        ed3=(EditText)findViewById(R.id.editText3);
-        ed3.setText(sharedpreferences.getString("passwordKey", "Login Password for Appointment Service"));
+        //sharedpreferences = getSharedPreferences(mlhInstancePreferences, Context.MODE_PRIVATE);
 
+        ed1=(EditText)findViewById(R.id.editText1);
+        //ed1.setText(sharedpreferences.getString("friendlyNameKey", "Your Preferred Name"));
+        ed2=(EditText)findViewById(R.id.editText2);
+        //ed2.setText(sharedpreferences.getString("userNameKey", "Login User Name for Appointment Service"));
+        ed3=(EditText)findViewById(R.id.editText3);
+        //ed3.setText(sharedpreferences.getString("passwordKey", "Login Password for Appointment Service"));
+        refreshLocalView();
         // Setup Controls
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fn = ed1.getText().toString();
-                String un = ed2.getText().toString();
-                String p = ed3.getText().toString();
 
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-
-                editor.putString(FriendlyName, fn);
-                editor.putString(UserName, un);
-                editor.putString(Password, p);
-                editor.commit();
-                Toast.makeText(SettingsManager.this, "Settings Set!", Toast.LENGTH_LONG).show();
+                MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManager.this);
+                msp.setSetting("friendlyNameKey", ed1.getText().toString());
+                msp.setSetting("userNameKey", ed2.getText().toString());
+                msp.setSetting("passwordKey", ed3.getText().toString());
 
                 refreshLocalView();
             }
@@ -65,32 +54,24 @@ public class SettingsManager extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences.Editor editor = sharedpreferences.edit();
-
-                editor.clear().commit();
-                Toast.makeText(SettingsManager.this, "Settings Cleared!", Toast.LENGTH_LONG).show();
-
+                MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManager.this);
+                msp.clearSetting();
                 refreshLocalView();
-
             }
         });
     }
 
     // Manage Primary Settings Activity TextView
     public void refreshLocalView() {
+        MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManager.this);
         // Init TextView
         settingsList.setText("Here are your new stored values: " + "\n");
-        settingsList.append("Your Name: " +  sharedpreferences.getString("friendlyNameKey", "Please set new value")+ "\n");
-        settingsList.append("Login User Name: " +  sharedpreferences.getString("userNameKey", "Please set new value")+ "\n");
-        settingsList.append("Password: " +  sharedpreferences.getString("passwordKey", "Please set new value"));
+        settingsList.append("Your Name: " +  msp.getSetting("friendlyNameKey")+ "\n");
+        settingsList.append("Login User Name: " +  msp.getSetting("userNameKey")+ "\n");
+        settingsList.append("Password: " +  msp.getSetting("passwordKey"));
         // Init Fields
-        ed1.setText(sharedpreferences.getString("friendlyNameKey", "Your Preferred Name"));
-        ed2.setText(sharedpreferences.getString("userNameKey", "Login User Name for Appointment Service"));
-        ed3.setText(sharedpreferences.getString("passwordKey", "Login Password for Appointment Service"));
+        ed1.setText(msp.getSetting("friendlyNameKey"));
+        ed2.setText(msp.getSetting("userNameKey"));
+        ed3.setText(msp.getSetting("passwordKey"));
     }
-
-    public void getSetting(String mySetting) {
-        // ToDo build flexible getter for other classes to use i.e. appointmentbroker
-    }
-
 }

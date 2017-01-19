@@ -16,9 +16,9 @@ Mother's Little Helper 2, Android App
   * ~~Activity to manage "settings" -> View,Edit,Clear~~
   * Two files, instance and child
   * ~~Creds~~
-  * User friendly name
+  * ~~User friendly name~~
   * Instance
-  * Stored creds
+  * ~~Stored creds~~
   * Customer_id
   * Location_id
 * Save pending request, scheduler picks up and posts

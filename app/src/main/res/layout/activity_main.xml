@@ -10,17 +10,11 @@
     android:layout_gravity="center"
     tools:context="com.majway.mlh.MainActivity">
     <TextView
+        android:id="@+id/welcomeMsgView1"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/main_tv_test"
-        android:padding="16dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_btn_request"
-        android:padding="16dp"
-        android:onClick="requestAppointment" />
+        android:text="@string/main_tv_welcome"
+        android:padding="16dp" />
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"

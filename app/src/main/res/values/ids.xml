@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--activity_main-->
+    <item name="welcomeMsgView1" type="id" />
     <!--activity_appointment_broker-->
     <item name="resultView1" type="id" />
     <item name="btnSendAppointmentRequest" type="id" />

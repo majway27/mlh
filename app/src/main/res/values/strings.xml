@@ -2,8 +2,7 @@
 
     <!--activity_main-->
     <string name="app_name">Mothers Little Helper</string>
-    <string name="main_tv_test">Post A Test Appointment</string>
-    <string name="main_btn_request">Test Post</string>
+    <string name="main_tv_welcome">Welcome, User</string>
     <string name="main_tv_schedule">Schedule an Appointment</string>
     <string name="main_btn_schedule">Schedule</string>
     <string name="main_tv_pending">View Pending Appointment Requests</string>
