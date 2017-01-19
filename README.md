@@ -13,9 +13,9 @@ Mother's Little Helper 2, Android App
   * ~~Spinner array key/value for gui values post~~
   * ~~Validate mechanize form management (do login, screendump, logout)~~
 * Private Preference Store
-  * Activity to manage "settings" -> View, -> Edit
+  * ~~Activity to manage "settings" -> View,Edit,Clear~~
   * Two files, instance and child
-  * Creds
+  * ~~Creds~~
   * User friendly name
   * Instance
   * Stored creds
@@ -47,11 +47,10 @@ Mother's Little Helper 2, Android App
       prev_date:
       next_date1:
       prev_date1
-  * Use setup values
+  * Use setup values, stored creds
   * Migrate to smartlock for creds
-  * Use stored creds
   * Cleanup GUI stuff in xml
-  * Logout button on app to clear user settings
+  * "Logout" button on app to clear user settings
 
 ## Considering
 * Enhance child data store to support scheduling child/infant in same "session", app logic drives separate appointment set posts ?

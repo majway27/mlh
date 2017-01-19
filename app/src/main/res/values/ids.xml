@@ -10,4 +10,5 @@
     <item name="editText2" type="id" />
     <item name="editText3" type="id" />
     <item name="btnEditSettings" type="id" />
+    <item name="btnClearSettings" type="id" />
 </resources>

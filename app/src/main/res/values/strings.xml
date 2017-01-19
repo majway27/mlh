@@ -14,7 +14,8 @@
     <!--activity_settings_manager-->
     <string name="settings_tv_caption">Manage User Settings</string>
     <string name="settings_tv_values">Manage User Settings</string>
-    <string name="settings_btn_edit">Manage</string>
+    <string name="settings_btn_edit">Save New Settings</string>
+    <string name="settings_btn_clear">Erase All Settings!</string>
 
     <!--activity_appointment_broker-->
     <string name="setup_request">Create New Appointment</string>
