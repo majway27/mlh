@@ -11,6 +11,9 @@
     <item name="editText1" type="id" />
     <item name="editText2" type="id" />
     <item name="editText3" type="id" />
+    <item name="editText4" type="id" />
+    <item name="editText5" type="id" />
+    <item name="editText6" type="id" />
     <item name="btnEditSettings" type="id" />
     <item name="btnClearSettings" type="id" />
 </resources>

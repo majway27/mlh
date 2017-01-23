@@ -6,21 +6,21 @@ Mother's Little Helper 2, Android App
   * ~~Schedule request now~~
   * ~~Schedule pending request~~
   * ~~View pending requests~~
-* Simple post
+* ~~Simple post~~
   * ~~Basic static values~~
   * ~~AsyncTask for call~~
   * ~~Simple GUI Values for post~~
   * ~~Spinner array key/value for gui values post~~
   * ~~Validate mechanize form management (do login, screendump, logout)~~
-* Private Preference Store
+* ~~Private Preference Store~~
   * ~~Activity to manage "settings" -> View,Edit,Clear~~
-  * Two files, instance and child
-  * ~~Creds~~
+  * ~~Credentials~~
   * ~~User friendly name~~
-  * Instance
-  * ~~Stored creds~~
-  * Customer_id
-  * Location_id
+  * ~~Instance,Customer_id ,Location_id~~
+* Child Asset Management
+  * Discovery on approach
+  * Activity for management?
+  * Arrayadapter/Listview?
 * Save pending request, scheduler picks up and posts
   * Alarmmanager, Jobscheduler eval
   * Scheduler understands 2 day wait and monitors and schedules valid targets from list
@@ -57,10 +57,13 @@ Mother's Little Helper 2, Android App
 * Push notifications when activity happens?
 * Direct link to site for manual verification?
 * MPL ?
+* Refactor some settings management with iterative loops, sp.getAll()
 * Fancy GUI, Pretty Icons ?
   * "New Apt" should be google style plus button in lower right.
   * View Scheduled should be a TextView panel in main page
-  * Should say welcome/hello user on main page
+  * ~~Should say welcome/hello user on main page~~
+  * Tabs for Settings page
+  * Rename Settings and Appointment classes to <X>Activity
 
 ## Notes
 * Requires API 21, min version 5
