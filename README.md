@@ -19,6 +19,10 @@ Mother's Little Helper 2, Android App
   * ~~Instance,Customer_id ,Location_id~~
 * Child Asset Management
   * Discovery on approach
+    * Listview-ArrayAdapter, activity, view child list
+    * Has button at bottom for add child activity, and delete all.
+    * Arraylist holds string arrays
+    * Clicking row calls edit child activity.
   * Activity for management?
   * Arrayadapter/Listview?
 * Save pending request, scheduler picks up and posts
