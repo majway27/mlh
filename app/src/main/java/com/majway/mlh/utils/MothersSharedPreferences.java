@@ -1,25 +1,31 @@
 package com.majway.mlh.utils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.widget.Toast;
+import com.majway.mlh.utils.Child;
+import com.google.gson.Gson;
 
-import java.util.Map;
-
-
+/** Manage data persistence of End User Instance Settings and Children **/
 public class MothersSharedPreferences {
 
     public SharedPreferences sharedpreferences;
-    public static final String mlhInstancePreferences = "mlhInstancePreferencesFile";
+    public static final String MLHINSTANCEPREFERENCES = "mlhInstancePreferencesFile";
+    public static final String CHILDREN = "Children";
     private final Context ctx;
+    // Set Child Test
+    List<Child> children;
 
     public MothersSharedPreferences(Context ctx) {
         super();
         // Hook in passed in application context
         this.ctx = ctx;
         // Init SP or SPs
-        sharedpreferences = ctx.getSharedPreferences(mlhInstancePreferences,
+        sharedpreferences = ctx.getSharedPreferences(MLHINSTANCEPREFERENCES,
                 Context.MODE_PRIVATE);
     }
 
@@ -65,6 +71,66 @@ public class MothersSharedPreferences {
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.clear().commit();
         Toast.makeText(ctx, "Settings Cleared!", Toast.LENGTH_LONG).show();
+    }
+
+    /** Child Data Management **/
+    public void saveChildren(Context context, List<Child> children) {
+        SharedPreferences settings;
+        SharedPreferences.Editor editor;
+
+        settings = context.getSharedPreferences(MLHINSTANCEPREFERENCES,
+                Context.MODE_PRIVATE);
+        editor = settings.edit();
+
+        Gson gson = new Gson();
+        String jsonChildren = gson.toJson(children);
+
+        editor.putString(CHILDREN, jsonChildren);
+
+        editor.commit();
+    }
+
+    public void addChild(Context context, Child child) {
+        List<Child> children = getChildren(context);
+        if (children == null)
+            children = new ArrayList<Child>();
+        children.add(child);
+        saveChildren(context, children);
+    }
+
+    public void removeChild(Context context, Child child) {
+        ArrayList<Child> children = getChildren(context);
+        if (children != null) {
+            children.remove(child);
+            saveChildren(context, children);
+        }
+    }
+
+    public ArrayList<Child> getChildren(Context context) {
+        SharedPreferences settings;
+        List<Child> children;
+
+        settings = context.getSharedPreferences(MLHINSTANCEPREFERENCES,
+                Context.MODE_PRIVATE);
+
+        if (settings.contains(CHILDREN)) {
+            String jsonChildren = settings.getString(CHILDREN, null);
+            Gson gson = new Gson();
+            Child[] childRoster = gson.fromJson(jsonChildren,
+                    Child[].class);
+
+            children = Arrays.asList(childRoster);
+            children = new ArrayList<Child>(children);
+        } else
+            return null;
+
+        return (ArrayList<Child>) children;
+    }
+
+    public void setChildTest() {
+        Child child1 = new Child(1, "Test Child", "Infant");
+        children = new ArrayList<Child>();
+        children.add(child1);
     }
 
 }

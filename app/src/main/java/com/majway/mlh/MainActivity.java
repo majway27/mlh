@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         welcomeMsgView=(TextView)findViewById(R.id.welcomeMsgView1);
         welcomeMsgView.setText("Welcome: " + msp.getSetting("friendlyNameKey"));
         //welcomeMsgView.setText("Welcome: ");
+        msp.setChildTest();
     }
 
     @Override
