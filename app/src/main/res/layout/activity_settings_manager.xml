@@ -13,7 +13,7 @@
         android:paddingLeft="@dimen/activity_element_padding"
         android:paddingRight="@dimen/activity_element_padding"
         android:paddingTop="@dimen/activity_element_padding"
-        tools:context="com.majway.mlh.SettingsManager">
+        tools:context="com.majway.mlh.utils.SettingsManager">
         <TextView
             android:id="@+id/settingsViewCaption"
             android:layout_height="wrap_content"

@@ -17,8 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppointmentBroker" />
-        <activity android:name=".SettingsManager"></activity>
+        <activity android:name=".appointment.AppointmentBroker" />
+        <activity android:name=".utils.SettingsManager"></activity>
     </application>
 
 </manifest>

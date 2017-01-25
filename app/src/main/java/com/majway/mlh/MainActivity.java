@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.majway.mlh.appointment.AppointmentBroker;
+import com.majway.mlh.utils.MothersSharedPreferences;
+import com.majway.mlh.utils.SettingsManager;
+
 
 public class MainActivity extends AppCompatActivity {
 

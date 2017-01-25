@@ -1,4 +1,4 @@
-package com.majway.mlh;
+package com.majway.mlh.utils;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.majway.mlh.R;
 
 public class SettingsManager extends AppCompatActivity {
 

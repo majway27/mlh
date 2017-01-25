@@ -1,4 +1,4 @@
-package com.majway.mlh;
+package com.majway.mlh.appointment;
 
 import com.gistlabs.mechanize.Mechanize;
 import com.gistlabs.mechanize.document.AbstractDocument;

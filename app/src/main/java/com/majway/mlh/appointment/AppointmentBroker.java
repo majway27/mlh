@@ -1,4 +1,4 @@
-package com.majway.mlh;
+package com.majway.mlh.appointment;
 
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.content.Intent;
 import android.widget.Toast;
 import android.app.ProgressDialog;
+
+import com.majway.mlh.R;
 
 
 public class AppointmentBroker extends AppCompatActivity {

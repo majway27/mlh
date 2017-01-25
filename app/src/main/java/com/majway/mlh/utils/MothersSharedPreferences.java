@@ -1,4 +1,4 @@
-package com.majway.mlh;
+package com.majway.mlh.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
