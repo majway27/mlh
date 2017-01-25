@@ -112,5 +112,15 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:onClick="onBtnClicked" />
+        <Button
+            android:id="@+id/btnManageChildren"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_btn_manage_children"
+            android:padding="16dp"
+            android:layout_below="@+id/btnClearSettings"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:onClick="manageChildren" />
     </RelativeLayout>
 </ScrollView>

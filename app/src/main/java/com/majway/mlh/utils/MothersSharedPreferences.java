@@ -45,6 +45,8 @@ public class MothersSharedPreferences {
                     "Customer ID for Appointment Service");
             case "locationIdKey": return sharedpreferences.getString(sharedprefkey,
                     "Location ID for Appointment Service");
+            case "CHILDREN": return sharedpreferences.getString(sharedprefkey,
+                    "No Children");
             default: return sharedpreferences.getString(sharedprefkey,
                     "Value Missing");
         }
@@ -131,6 +133,7 @@ public class MothersSharedPreferences {
         Child child1 = new Child(1, "Test Child", "Infant");
         children = new ArrayList<Child>();
         children.add(child1);
+        saveChildren(ctx, children);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.majway.mlh.utils;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.majway.mlh.R;
+import com.majway.mlh.utils.ChildManagerActivity;
 
 public class SettingsManager extends AppCompatActivity {
 
@@ -31,6 +33,8 @@ public class SettingsManager extends AppCompatActivity {
         ed5=(EditText)findViewById(R.id.editText5);
         ed6=(EditText)findViewById(R.id.editText6);
 
+        MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManager.this);
+        msp.setChildTest();
         refreshLocalView();
         // Setup Controls
         b1.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +72,8 @@ public class SettingsManager extends AppCompatActivity {
         settingsList.append("Password: " +  msp.getSetting("passwordKey")+ "\n");
         settingsList.append("Instance: " +  msp.getSetting("instanceKey")+ "\n");
         settingsList.append("Customer ID: " +  msp.getSetting("customerIdKey")+ "\n");
-        settingsList.append("Location ID: " +  msp.getSetting("locationIdKey"));
+        settingsList.append("Location ID: " +  msp.getSetting("locationIdKey")+ "\n");
+        settingsList.append("Children: " +  msp.getSetting("Children"));
 
         // Init Fields
         ed1.setText(msp.getSetting("friendlyNameKey"));
@@ -77,5 +82,10 @@ public class SettingsManager extends AppCompatActivity {
         ed4.setText(msp.getSetting("instanceKey"));
         ed5.setText(msp.getSetting("customerIdKey"));
         ed6.setText(msp.getSetting("locationIdKey"));
+    }
+
+    public void manageChildren(View view) {
+        Intent intent = new Intent(this, ChildManagerActivity.class);
+        startActivity(intent);
     }
 }

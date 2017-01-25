@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".appointment.AppointmentBroker" />
-        <activity android:name=".utils.SettingsManager"></activity>
+        <activity android:name=".utils.SettingsManager" />
+        <activity android:name=".utils.ChildManagerActivity"></activity>
     </application>
 
 </manifest>

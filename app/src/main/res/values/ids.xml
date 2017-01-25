@@ -16,4 +16,5 @@
     <item name="editText6" type="id" />
     <item name="btnEditSettings" type="id" />
     <item name="btnClearSettings" type="id" />
+    <item name="btnManageChildren" type="id" />
 </resources>
