@@ -1,6 +1,5 @@
 package com.majway.mlh.utils;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.majway.mlh.R;
-import com.majway.mlh.utils.ChildManagerActivity;
 
 public class SettingsManager extends AppCompatActivity {
 
@@ -82,10 +80,5 @@ public class SettingsManager extends AppCompatActivity {
         ed4.setText(msp.getSetting("instanceKey"));
         ed5.setText(msp.getSetting("customerIdKey"));
         ed6.setText(msp.getSetting("locationIdKey"));
-    }
-
-    public void manageChildren(View view) {
-        Intent intent = new Intent(this, ChildManagerActivity.class);
-        startActivity(intent);
     }
 }

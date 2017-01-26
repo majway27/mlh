@@ -8,14 +8,14 @@
     <string name="main_tv_pending">View Pending Appointment Requests</string>
     <string name="main_btn_pending">View Pending</string>
     <string name="main_tv_settings">Manage User Settings</string>
-    <string name="main_btn_settings">Manage</string>
+    <string name="main_btn_settings">Credentials</string>
+    <string name="settings_btn_manage_children">Children</string>
 
     <!--activity_settings_manager-->
     <string name="settings_tv_caption">Manage User Settings</string>
     <string name="settings_tv_values">Manage User Settings</string>
     <string name="settings_btn_edit">Save New Settings</string>
     <string name="settings_btn_clear">Erase All Settings!</string>
-    <string name="settings_btn_manage_children">Manage Children</string>
 
     <!--activity_appointment_broker-->
     <string name="setup_request">Create New Appointment</string>

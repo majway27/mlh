@@ -1,4 +1,4 @@
-package com.majway.mlh.utils;
+package com.majway.mlh.rugrat;
 
 public class Child {
 

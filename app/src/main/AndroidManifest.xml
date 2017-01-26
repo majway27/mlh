@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".appointment.AppointmentBroker" />
         <activity android:name=".utils.SettingsManager" />
-        <activity android:name=".utils.ChildManagerActivity"></activity>
+        <activity android:name=".rugrat.ChildManagerActivity"></activity>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@
 <resources>
     <!--activity_main-->
     <item name="welcomeMsgView1" type="id" />
+    <item name="btnManageChildren" type="id" />
     <!--activity_appointment_broker-->
     <item name="resultView1" type="id" />
     <item name="btnSendAppointmentRequest" type="id" />
@@ -16,5 +17,4 @@
     <item name="editText6" type="id" />
     <item name="btnEditSettings" type="id" />
     <item name="btnClearSettings" type="id" />
-    <item name="btnManageChildren" type="id" />
 </resources>

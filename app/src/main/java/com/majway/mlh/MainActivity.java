@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.majway.mlh.appointment.AppointmentBroker;
 import com.majway.mlh.utils.MothersSharedPreferences;
 import com.majway.mlh.utils.SettingsManager;
+import com.majway.mlh.rugrat.ChildManagerActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -51,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
     /** Called when the user clicks the Send button */
     public void manageSettings(View view) {
         Intent intent = new Intent(this, SettingsManager.class);
+        startActivity(intent);
+    }
+
+    public void manageChildren(View view) {
+        Intent intent = new Intent(this, ChildManagerActivity.class);
         startActivity(intent);
     }
 

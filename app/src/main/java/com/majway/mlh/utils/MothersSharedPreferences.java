@@ -7,7 +7,7 @@ import java.util.List;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.widget.Toast;
-import com.majway.mlh.utils.Child;
+import com.majway.mlh.rugrat.Child;
 import com.google.gson.Gson;
 
 /** Manage data persistence of End User Instance Settings and Children **/

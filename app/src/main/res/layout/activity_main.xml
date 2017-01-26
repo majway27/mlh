@@ -45,10 +45,26 @@
         android:text="@string/main_tv_settings"
         android:padding="16dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+    <LinearLayout
+        android:id="@+id/page_buttons"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/main_btn_settings"
         android:padding="16dp"
+        android:layout_weight="1"
         android:onClick="manageSettings" />
+    <Button
+        android:id="@+id/btnManageChildren"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_btn_manage_children"
+        android:padding="16dp"
+        android:layout_weight="1"
+        android:onClick="manageChildren" />
+    </LinearLayout>
 </LinearLayout>
