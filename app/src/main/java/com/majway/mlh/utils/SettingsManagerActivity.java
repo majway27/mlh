@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.majway.mlh.R;
 
-public class SettingsManager extends AppCompatActivity {
+public class SettingsManagerActivity extends AppCompatActivity {
 
     private TextView settingsList;
     EditText ed1,ed2,ed3, ed4, ed5, ed6;
@@ -31,7 +31,7 @@ public class SettingsManager extends AppCompatActivity {
         ed5=(EditText)findViewById(R.id.editText5);
         ed6=(EditText)findViewById(R.id.editText6);
 
-        MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManager.this);
+        MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManagerActivity.this);
         msp.setChildTest();
         refreshLocalView();
         // Setup Controls
@@ -39,7 +39,7 @@ public class SettingsManager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManager.this);
+                MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManagerActivity.this);
                 msp.setSetting("friendlyNameKey", ed1.getText().toString());
                 msp.setSetting("userNameKey", ed2.getText().toString());
                 msp.setSetting("passwordKey", ed3.getText().toString());
@@ -53,7 +53,7 @@ public class SettingsManager extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManager.this);
+                MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManagerActivity.this);
                 msp.clearSetting();
                 refreshLocalView();
             }
@@ -62,7 +62,7 @@ public class SettingsManager extends AppCompatActivity {
 
     // Manage Primary Settings Activity TextView
     public void refreshLocalView() {
-        MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManager.this);
+        MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManagerActivity.this);
         // Init TextView
         settingsList.setText("Here are your new stored values: " + "\n");
         settingsList.append("Your Name: " +  msp.getSetting("friendlyNameKey")+ "\n");

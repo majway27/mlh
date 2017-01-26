@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.majway.mlh.appointment.AppointmentBroker;
+import com.majway.mlh.appointment.AppointmentBrokerActivity;
 import com.majway.mlh.utils.MothersSharedPreferences;
 import com.majway.mlh.utils.SettingsManager;
 import com.majway.mlh.rugrat.ChildManagerActivity;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     /** Called when the user clicks the Send button */
     public void scheduleAppointment(View view) {
-        Intent intent = new Intent(this, AppointmentBroker.class);
+        Intent intent = new Intent(this, AppointmentBrokerActivity.class);
         startActivity(intent);
     }
 

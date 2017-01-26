@@ -14,7 +14,7 @@ import android.app.ProgressDialog;
 import com.majway.mlh.R;
 
 
-public class AppointmentBroker extends AppCompatActivity {
+public class AppointmentBrokerActivity extends AppCompatActivity {
 
     private TextView returnStatus;
     private Spinner svc_id_spinner, e_id_spinner;
@@ -109,7 +109,7 @@ public class AppointmentBroker extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            progressDialog = ProgressDialog.show(AppointmentBroker.this,
+            progressDialog = ProgressDialog.show(AppointmentBrokerActivity.this,
                     "ProgressDialog",
                     "Status: Starting Call");
         }

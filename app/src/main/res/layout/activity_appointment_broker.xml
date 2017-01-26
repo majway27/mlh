@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_element_padding"
     android:paddingTop="@dimen/activity_element_padding"
     android:layout_gravity="center"
-    tools:context="com.majway.mlh.appointment.AppointmentBroker">
+    tools:context="com.majway.mlh.appointment.AppointmentBrokerActivity">
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
