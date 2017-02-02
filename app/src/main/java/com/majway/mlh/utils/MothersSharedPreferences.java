@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.widget.Toast;
 import com.majway.mlh.rugrat.Child;
 import com.google.gson.Gson;
@@ -45,21 +46,13 @@ public class MothersSharedPreferences {
                     "Customer ID for Appointment Service");
             case "locationIdKey": return sharedpreferences.getString(sharedprefkey,
                     "Location ID for Appointment Service");
-            case "CHILDREN": return sharedpreferences.getString(sharedprefkey,
+            case "Children": return sharedpreferences.getString(sharedprefkey,
                     "No Children");
             default: return sharedpreferences.getString(sharedprefkey,
                     "Value Missing");
         }
     }
-
-    /** public String getAllSetting() {
-        Map<String,?> keys = sharedpreferences.getAll();
-
-        for(Map.Entry<String,?> entry : keys.entrySet()){
-            return this.getSetting(entry.getValue().toString());
-        }
-    } */
-
+    
     // Setter, see switch above for quick reference on keys.
     public void setSetting(String sharedprefkey, String sharedprefvalue) {
         SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -73,6 +66,13 @@ public class MothersSharedPreferences {
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.clear().commit();
         Toast.makeText(ctx, "Settings Cleared!", Toast.LENGTH_LONG).show();
+    }
+
+    public void wipeChildren() {
+        // Wipe Children in stored preferences
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.remove(CHILDREN).commit();
+        Toast.makeText(ctx, "Children Cleared!", Toast.LENGTH_LONG).show();
     }
 
     /** Child Data Management **/
@@ -108,32 +108,41 @@ public class MothersSharedPreferences {
         }
     }
 
-    public ArrayList<Child> getChildren(Context context) {
-        SharedPreferences settings;
+    public ArrayList<Child> getChildren(Context ctx) {
+        Log.d("myTag", "Starting");
+        SharedPreferences sharedpreferences;
         List<Child> children;
 
-        settings = context.getSharedPreferences(MLHINSTANCEPREFERENCES,
+        sharedpreferences = ctx.getSharedPreferences(MLHINSTANCEPREFERENCES,
                 Context.MODE_PRIVATE);
 
-        if (settings.contains(CHILDREN)) {
-            String jsonChildren = settings.getString(CHILDREN, null);
+        if (sharedpreferences.getString("Children", "No Children") == "No Children") {
+            children = new ArrayList<Child>();
+            Log.d("myTag", "Children SP is wiped");
+        } else if (sharedpreferences.contains(CHILDREN)) {
+            Log.d("myTag", "containsChildren");
+            String jsonChildren = sharedpreferences.getString(CHILDREN, null);
             Gson gson = new Gson();
             Child[] childRoster = gson.fromJson(jsonChildren,
                     Child[].class);
 
             children = Arrays.asList(childRoster);
             children = new ArrayList<Child>(children);
+            //return (ArrayList<Child>) children;
         } else
             return null;
-
+        Log.d("myTag", "Returning children ArrayList");
         return (ArrayList<Child>) children;
     }
 
-    public void setChildTest() {
-        Child child1 = new Child(1, "Test Child", "Infant");
-        children = new ArrayList<Child>();
-        children.add(child1);
+    /**public void addChildTest() {
+        Child child = new Child("3", "Test Child3", "Child");
+
+        List<Child> children = getChildren(ctx);
+        if (children == null)
+            children = new ArrayList<Child>();
+        children.add(child);
         saveChildren(ctx, children);
-    }
+    }**/
 
 }

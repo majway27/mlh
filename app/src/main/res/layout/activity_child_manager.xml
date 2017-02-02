@@ -10,4 +10,48 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.majway.mlh.rugrat.ChildManagerActivity">
 
+    <LinearLayout
+        android:id="@+id/page_buttons"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/main_tv_children"
+            android:padding="16dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_weight="1" />
+
+        <ListView
+            android:id="@+id/lvChildren"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_weight="80" >
+        </ListView>
+
+        <Button
+            android:id="@+id/btnAddNewChild"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_new_child"
+            android:padding="16dp"
+            android:layout_weight="1"
+            android:onClick="createChild" />
+        <Button
+            android:id="@+id/btnWipeChildren"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/wipe_children"
+            android:padding="16dp"
+            android:layout_weight="1"
+            android:onClick="onBtnClicked" />
+
+    </LinearLayout>
+
 </RelativeLayout>

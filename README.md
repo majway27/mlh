@@ -18,13 +18,7 @@ Mother's Little Helper 2, Android App
   * ~~User friendly name~~
   * ~~Instance,Customer_id ,Location_id~~
 * Child Asset Management
-  * Discovery on approach
-    * Listview-ArrayAdapter, activity, view child list
-    * Has button at bottom for add child activity, and delete all.
-    * Arraylist holds string arrays
-    * Clicking row calls edit child activity.
-  * Activity for management?
-  * Arrayadapter/Listview?
+  * Clicking row calls edit child activity.
 * Save pending request, scheduler picks up and posts
   * Alarmmanager, Jobscheduler eval
   * Scheduler understands 2 day wait and monitors and schedules valid targets from list
@@ -55,6 +49,9 @@ Mother's Little Helper 2, Android App
   * Migrate to smartlock for creds
   * Cleanup GUI stuff in xml
   * "Logout" button on app to clear user settings
+  * Add ability to delete single child
+  * Field validation on Create Child Activity
+  * CustomChildAdapter should look up eid, not be hard coded on Textview setText
 
 ## Considering
 * Enhance child data store to support scheduling child/infant in same "session", app logic drives separate appointment set posts ?

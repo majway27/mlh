@@ -44,7 +44,10 @@
     </string-array>
 
     <!--activity_child_manager-->
-    <string name="favorites">Favorites</string>
+    <string name="main_tv_children">Children</string>
     <string name="children">Children</string>
+    <string name="favorites">Favorites</string>
+    <string name="add_new_child">Add Child</string>
+    <string name="wipe_children">Erase All Children</string>
 
 </resources>

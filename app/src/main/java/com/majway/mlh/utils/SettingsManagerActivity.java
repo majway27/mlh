@@ -32,7 +32,7 @@ public class SettingsManagerActivity extends AppCompatActivity {
         ed6=(EditText)findViewById(R.id.editText6);
 
         MothersSharedPreferences msp = new MothersSharedPreferences(SettingsManagerActivity.this);
-        msp.setChildTest();
+        //msp.setChildTest();
         refreshLocalView();
         // Setup Controls
         b1.setOnClickListener(new View.OnClickListener() {

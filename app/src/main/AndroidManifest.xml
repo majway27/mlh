@@ -18,8 +18,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".appointment.AppointmentBrokerActivity" />
-        <activity android:name=".utils.SettingsManager" />
-        <activity android:name=".rugrat.ChildManagerActivity"></activity>
+        <activity android:name=".utils.SettingsManagerActivity" />
+        <activity android:name=".rugrat.ChildManagerActivity" />
+        <activity android:name=".rugrat.CreateChildActivity" />
+        <activity android:name=".rugrat.EditChildActivity"></activity>
     </application>
 
 </manifest>
